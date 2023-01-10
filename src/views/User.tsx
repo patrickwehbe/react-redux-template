@@ -5,7 +5,7 @@ export default function User() {
   const { data, isError, isLoading } = useGetUserByNameQuery('patrick')
 
   return (
-    <div className="App">
+    <div className="user">
       {isError ? (
         <>Oh no, there was an error</>
       ) : isLoading ? (
