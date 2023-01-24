@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { IValue } from '../models/services/value'
-import { useGetAllValuesQuery } from '../services'
+import { useGetAllValuesQuery } from '../api'
 
 export default function Value() {
   const { currentData, isError, isLoading, isSuccess } = useGetAllValuesQuery('')

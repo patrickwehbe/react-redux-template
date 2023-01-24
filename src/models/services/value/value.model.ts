@@ -1,9 +1,8 @@
 import { FileInfo } from "../../shared/file.model";
 
-export interface IValue {
+export type IValue = {
+	id: string;
 
-    id:string
-	
 	/**
 	 * Name of Value
 	 */
@@ -23,5 +22,4 @@ export interface IValue {
 	 * If of the organization that owns the value
 	 */
 	organizationId?: string;
-
 }

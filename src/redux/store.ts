@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import { valueApi } from '../services';
-import {userApi} from '../services/api'
+import { valueApi } from '../api';
+import {userApi} from '../api/user.api'
 
 
 export const store = configureStore({
