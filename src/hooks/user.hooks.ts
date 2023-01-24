@@ -18,7 +18,7 @@ export function useGetUserByNameQuery(name: string) {
   const data = useSelector((state: RootState) => selectDataByName(state, name))
   useEffect(() => {
     // upon mount or name change, if status is uninitialized, send a request
-    // for the pokemon name
+    // for the user name
     if (status === undefined) {
       dispatch(fetchUserByName(name))
     }
