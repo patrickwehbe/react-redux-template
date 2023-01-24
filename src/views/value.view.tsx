@@ -3,7 +3,11 @@ import type { IValue } from '../models/services/value'
 import { useGetAllValuesQuery } from '../api'
 
 export default function Value() {
-  const { currentData, isError, isLoading, isSuccess } = useGetAllValuesQuery('')
+  const { currentData, isError, isLoading, isSuccess, error } = useGetAllValuesQuery({
+    pollingInterval: 0, // disable polling for this query
+    refetchOnMountOrArgChange: true,
+  })
+   console.log("🚀 ~ file: value.view.tsx:10 ~ Value ~ error", error)
    console.log("🚀 ~ file: User.tsx:18 ~ User ~ currentData", currentData)
 
   return (
