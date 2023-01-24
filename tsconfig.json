@@ -14,8 +14,13 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "preserve"
+		"jsx": "preserve",
+		"pretty": true,
+		"inlineSourceMap": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"strictPropertyInitialization": false,
+		"noImplicitAny": false
 	},
-	"include": ["src"],
-
+	"include": ["src"]
 }
