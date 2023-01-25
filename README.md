@@ -27,7 +27,7 @@ We are currently using the following libraries:
 
 ## Create your app
 
-Use the template provided below (https://github.com/patrickwehbe/react-redux-typescript-template.git) to create a single-page React application. It offers a modern build setup with no configuration.
+Use the template provided [here](https://github.com/patrickwehbe/react-redux-typescript-template.git) to create a single-page React application. It offers a modern build with webpack, redux, Typescript and @reduxjs/toolkit already setup with examples.
 
 -   Create a new repository using this template or clone it and start working on it.
 
