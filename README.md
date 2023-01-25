@@ -271,3 +271,6 @@ We're using the ssh-action to remotely access our droplet from our repository.
 -   `docker run -dit -p 80:80 my_github_username/my_repository_name/my_image_name:tag` pull the lastest image and run it on port 80.
 
 Congratulations 🎉! You can now access your react-app on your droplet IP_ADDRESS or DOMAIN_NAME.
+
+### License
+[MIT License](https://github.com/patrickwehbe/react-redux-typescript-template/blob/master/LICENSE)
