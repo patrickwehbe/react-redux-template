@@ -1,25 +1,25 @@
 import { FileInfo } from "../../shared/file.model";
 
 export type IValue = {
-	id: string;
+  id: string;
 
-	/**
-	 * Name of Value
-	 */
-	name: string;
+  /**
+   * Name of Value
+   */
+  name: string;
 
-	/**
-	 * Description of value
-	 */
-	description: string;
+  /**
+   * Description of value
+   */
+  description: string;
 
-	/**
-	 * Url of the file (stored in S3)
-	 */
-	fileInfo?: FileInfo;
+  /**
+   * Url of the file (stored in S3)
+   */
+  fileInfo?: FileInfo;
 
-	/**
-	 * If of the organization that owns the value
-	 */
-	organizationId?: string;
-}
+  /**
+   * If of the organization that owns the value
+   */
+  organizationId?: string;
+};

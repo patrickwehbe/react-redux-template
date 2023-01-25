@@ -2,15 +2,15 @@ import { IsEmail, IsString } from "class-validator";
 import { Model } from "../../shared";
 
 export class User extends Model {
-	@IsString()
-	id: string;
+  @IsString()
+  id: string;
 
-	@IsString()
-	firstname: string;
+  @IsString()
+  firstname: string;
 
-    @IsString()
-	lastname: string;
+  @IsString()
+  lastname: string;
 
-	@IsEmail()
-	email: string;
+  @IsEmail()
+  email: string;
 }

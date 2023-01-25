@@ -1,2 +1,2 @@
-export * from './request.model'
-export * from './response.model'
+export * from "./request.model";
+export * from "./response.model";
