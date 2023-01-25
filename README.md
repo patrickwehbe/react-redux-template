@@ -2,11 +2,11 @@
 
 ![build](https://github.com/kenessajr/react-with-actions/workflows/build/badge.svg?branch=master)
 
-In this tutorial, you will learn how to set up a continuous delivery of a React app using tools like [Docker](https://www.docker.com/) and [Github Actions](https://github.com/features/actions). We will use an Ubuntu (18.04 LTS) droplet on [DigitalOcean](https://www.digitalocean.com/) to host our app.
+This template provides you with a complete set up of a continuous delivery of a React app using tools like [Docker](https://www.docker.com/) and [Github Actions](https://github.com/features/actions). We will use an Ubuntu (18.04 LTS) droplet on [DigitalOcean](https://www.digitalocean.com/) to host our app or Vercel.
 
 ## Prerequisites
 
-Here are the prerequisites required for this tutorial.
+Here are the prerequisites required.
 
 -   A Github account [Github](https://github.com/)
 -   A [Docker Droplet](https://marketplace.digitalocean.com/apps/docker) (Ubuntu 18.04 LTS) on DigitalOcean.
@@ -27,7 +27,7 @@ We are currently using the following libraries:
 
 ## Create your app
 
-Use the template provided below (https://github.com/patrickwehbe/react-redux-typescript-template.git) to create a single-page React application. It offers a modern build setup with no configuration.
+Use the template provided [here](https://github.com/patrickwehbe/react-redux-typescript-template.git) to create a single-page React application. It offers a modern build with webpack, redux, Typescript and @reduxjs/toolkit already setup with examples.
 
 -   Create a new repository using this template or clone it and start working on it.
 
@@ -179,17 +179,14 @@ git push origin master
 
 If you click on actions, you will notice the start of the deployment workflow. Wait and see your image being published on your Github Packages Registry.
 
-![Alt actions](https://dev-to-uploads.s3.amazonaws.com/i/u44quiqpbfzd3btnvj5s.jpeg)
-
 You can find your published docker image in your repository on the package tab.
 
-![Alt pack-det](https://dev-to-uploads.s3.amazonaws.com/i/g9ij5p8jnbv1yr4uu46l.png)
 
 We successfully published our docker app image on the Github Package Registry. We are going to order a Docker Droplet on DigitalOcean and set up a flow to deploy and our app image on DigitalOcean.
 
 ## Deploy.
 
-For deployment, we are going to create a [Docker Droplet](https://marketplace.digitalocean.com/apps/docker) on DigitalOcean. Please do not forget to sign up with my [Referral Link](https://m.do.co/c/3823fc9590b7) and get \$100 in credit for over 60 days.
+For deployment, we are going to create a [Docker Droplet](https://marketplace.digitalocean.com/apps/docker) on DigitalOcean.
 
 ![Alt docker-droplet](https://dev-to-uploads.s3.amazonaws.com/i/s3ksr4go646y3e4389v3.png)
 
@@ -275,4 +272,5 @@ We're using the ssh-action to remotely access our droplet from our repository.
 
 Congratulations 🎉! You can now access your react-app on your droplet IP_ADDRESS or DOMAIN_NAME.
 
-Mine is running on [http://167.172.51.225/](http://167.172.51.225/)
+### License
+[MIT License](https://github.com/patrickwehbe/react-redux-typescript-template/blob/master/LICENSE)
