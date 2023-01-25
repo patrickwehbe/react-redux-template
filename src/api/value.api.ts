@@ -18,6 +18,12 @@ export const valueApi = createApi({
     // GET one value start region
     getOneValue: build.query<Response<IValue>, string>({
       query: (id) => `value/${id}`,
+      providesTags: (result, error, id) =>
+        result
+          ? [{ type: "Value", id }]
+          : error?.status === 401
+          ? ["UNAUTHORIZED"]
+          : ["UNKNOWN_ERROR"],
     }),
     // GET one value end region
 

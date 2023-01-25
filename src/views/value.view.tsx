@@ -10,11 +10,19 @@ function Value() {
       refetchOnMountOrArgChange: true,
     });
 
-  const result = useGetOneValueQuery("1");
-  console.log("🚀 ~ file: value.view.tsx:10 ~ Value ~ error", error);
-  console.log("🚀 ~ file: User.tsx:18 ~ User ~ currentData", currentData);
+  const result = useGetOneValueQuery("1", {
+    pollingInterval: 0, // disable polling for this query,
+    refetchOnMountOrArgChange: true,
+  });
 
-  // if (isError) return <div>An error has occurred!</div>
+  if (isError) return <div>An error has occurred!</div>;
+
+  if (isFetching && !currentData)
+    return (
+      <Box sx={{ overflow: "hidden" }}>
+        <Skeleton variant="text" />
+      </Box>
+    );
 
   return (
     <div
@@ -32,7 +40,7 @@ function Value() {
             {currentData.data.map((value: IValue) => (
               <div className="" key={value.id}>
                 <h3>Name: {value.name}</h3>
-                <h3>Description: {value.description}</h3>
+                <h4>Description: {value.description}</h4>
               </div>
             ))}
           </>
@@ -40,13 +48,15 @@ function Value() {
       </div>
 
       <div className="getone">
-        <h2>Get ONE VALUES</h2>
+        <h2>Get ONE VALUE</h2>
         {result.isError ? (
           <>Oh no, there was an error</>
         ) : result.isLoading ? (
           <>Loading...</>
         ) : result.isSuccess && result.currentData ? (
-          <>{result.currentData.data.name}</>
+          <>
+            <h3>Name: {result.data.data.name}</h3>
+          </>
         ) : null}
       </div>
     </div>
