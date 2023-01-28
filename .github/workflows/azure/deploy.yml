@@ -1,0 +1,40 @@
+name: Deploy to Azure
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy-production:
+        runs-on: ubuntu-latest
+        env:
+            AZURE_PUBLISH_PROFILE: ${{ secrets.AZURE_PROD_PUBLISH_PROFILE }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Install dependencies
+              run: npm ci
+            - name: Build app
+              run: npm run build
+            - name: Deploy to production
+              uses: Azure/webapps-deploy@v2
+              with:
+                  app-name: my-prod-app
+                  package: build
+    deploy-staging:
+        runs-on: ubuntu-latest
+        env:
+            AZURE_PUBLISH_PROFILE: ${{ secrets.AZURE_STAGING_PUBLISH_PROFILE }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Install dependencies
+              run: npm ci
+            - name: Build app
+              run: npm run build
+            - name: Deploy to staging
+              uses: Azure/webapps-deploy@v2
+              with:
+                  app-name: my-staging-app
+                  package: build
