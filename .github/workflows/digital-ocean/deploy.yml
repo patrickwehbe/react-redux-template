@@ -1,0 +1,41 @@
+name: Deploy to DigitalOcean
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 14
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build application
+              run: npm run build
+
+            - name: Deploy to DigitalOcean
+              uses: dawidd6/action-doctl@v2
+              with:
+                  args: compute droplet create example-droplet --size s-1vcpu-1gb --image ubuntu-20-04-x64 --region fra1 --ssh-keys 1234 --wait
+                  token: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+            - name: Deploy to DigitalOcean
+              run: doctl compute ssh example-droplet --command 'sudo apt-get update'
+            - name: Deploy to DigitalOcean
+              run: doctl compute ssh example-droplet --command 'sudo apt-get install nginx -y'
+            - name: Deploy to DigitalOcean
+              run: doctl compute ssh example-droplet --command 'sudo rm -rf /var/www/html/*'
+            - name: Deploy to DigitalOcean
+              run: doctl compute scp --recursive build example-droplet:/var/www/html
+            - name: Deploy to DigitalOcean
+              run: doctl compute ssh example-droplet --command 'sudo service nginx restart'
