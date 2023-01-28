@@ -1,8 +1,21 @@
-# React Redux Typescript Boilerplate
+# React-Redux-TypeScript template
 
-![build](https://github.com/kenessajr/react-with-actions/workflows/build/badge.svg?branch=master)
+This template is a starter kit for building React applications using the Redux state management library and TypeScript.
 
-This template provides you with a complete set up of a continuous delivery of a React app using tools like [Docker](https://www.docker.com/) and [Github Actions](https://github.com/features/actions). We will use an Ubuntu (18.04 LTS) droplet on [DigitalOcean](https://www.digitalocean.com/) to host our app or Vercel.
+The template includes the following features:
+- A basic file structure for organizing your code
+- A preconfigured webpack setup for building and running the application
+- A preconfigured ESLint and Prettier configuration for code linting and formatting
+- Example code for setting up a basic Redux store and connecting it to a React component
+- Typescript support throughout the entire application
+
+This template provides a solid foundation for building scalable and maintainable React applications with Redux and TypeScript. It can be easily extended and customized to fit the specific needs of your project.
+
+Additionally, it can also include tools like Jest and Enzyme for testing, and it can be integrated with a variety of other libraries and tools such as Material-UI, Formik, React Router, etc.
+
+By using this template, you can save a lot of time and effort when starting a new project, as it provides a well-structured starting point that follows best practices and industry standards.
+
+Finally, it provides you with a complete set up of a continuous delivery of a React app using tools like [Docker](https://www.docker.com/) and [Github Actions](https://github.com/features/actions). We will use an Ubuntu (18.04 LTS) droplet on [DigitalOcean](https://www.digitalocean.com/) to host our app or Vercel.
 
 ## Prerequisites
 
